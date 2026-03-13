@@ -12,7 +12,7 @@
     <ProjectReference Include="..\record-ai-discord-bot.ApiService\record-ai-discord-bot.ApiService.csproj" />
     <ProjectReference Include="..\record-ai-discord-bot.Web\record-ai-discord-bot.Web.csproj" />
     <ProjectReference Include="..\record-ai-discord-bot.Worker\record-ai-discord-bot.Worker.csproj" />
-    <ProjectReference Include="..\record-ai-discord-bot.ServiceDefaults\record-ai-discord-bot.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\record-ai-discord-bot.ServiceDefaults\record-ai-discord-bot.ServiceDefaults.csproj" IsAspireProjectResource="false" />
   </ItemGroup>
 
   <ItemGroup>

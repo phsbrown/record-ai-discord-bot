@@ -19,4 +19,9 @@
     <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.14.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\record-ai-discord-bot.Application\record-ai-discord-bot.Application.csproj" />
+    <ProjectReference Include="..\record-ai-discord-bot.Infrastructure\record-ai-discord-bot.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
