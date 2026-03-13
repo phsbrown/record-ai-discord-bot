@@ -1,0 +1,31 @@
+## Build outputs
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+## IDE and user state
+.vs/
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Test and coverage artifacts
+[Tt]est[Rr]esult*/
+coverage/
+coverage*.json
+coverage*.xml
+*.coverage
+*.coveragexml
+
+## Local runtime data
+.env
+.data/
+recordings/
+
+## Logs
+[Ll]og/
+[Ll]ogs/
+*.log
