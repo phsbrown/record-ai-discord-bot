@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\record-ai-discord-bot.AppHost\record-ai-discord-bot.AppHost.csproj" />
+    <ProjectReference Include="..\record-ai-discord-bot.Application\record-ai-discord-bot.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

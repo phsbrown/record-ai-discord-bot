@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-record_ai_discord_bot.Worker-e3a310de-af01-4b24-a3c3-a90dbab82dd9</UserSecretsId>
@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.1.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.11" />
   </ItemGroup>
 
@@ -16,5 +17,7 @@
     <ProjectReference Include="..\record-ai-discord-bot.Domain\record-ai-discord-bot.Domain.csproj" />
     <ProjectReference Include="..\record-ai-discord-bot.Application\record-ai-discord-bot.Application.csproj" />
     <ProjectReference Include="..\record-ai-discord-bot.Infrastructure\record-ai-discord-bot.Infrastructure.csproj" />
+    <ProjectReference Include="..\record-ai-discord-bot.ServiceDefaults\record-ai-discord-bot.ServiceDefaults.csproj" />
   </ItemGroup>
+
 </Project>

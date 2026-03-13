@@ -7,6 +7,9 @@ using Microsoft.Extensions.ServiceDiscovery;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
+using record_ai_discord_bot.Application.Services;
+using record_ai_discord_bot.Infrastructure.External.Ollama;
+using record_ai_discord_bot.Infrastructure.External.Whisper;
 
 namespace Microsoft.Extensions.Hosting;
 
@@ -25,6 +28,7 @@ public static class Extensions
         builder.AddDefaultHealthChecks();
 
         builder.Services.AddServiceDiscovery();
+        builder.Services.AddDiscordRecordingHttpClients();
 
         builder.Services.ConfigureHttpClientDefaults(http =>
         {
@@ -42,6 +46,26 @@ public static class Extensions
         // });
 
         return builder;
+    }
+
+    public static IServiceCollection AddDiscordRecordingHttpClients(this IServiceCollection services)
+    {
+        services.AddHttpClient<IWhisperClient, WhisperClient>("whisper", client =>
+        {
+            client.BaseAddress = new Uri("http://whisper");
+            client.Timeout = TimeSpan.FromMinutes(5);
+        });
+
+        services.AddHttpClient<IOllamaClient, OllamaClient>("ollama", client =>
+        {
+            client.BaseAddress = new Uri("http://ollama");
+            client.Timeout = TimeSpan.FromMinutes(10);
+        });
+
+        services.AddTransient<ITranscriptionService, WhisperTranscriptionService>();
+        services.AddTransient<ISummarizationService, OllamaSummarizationService>();
+
+        return services;
     }
 
     public static TBuilder ConfigureOpenTelemetry<TBuilder>(this TBuilder builder) where TBuilder : IHostApplicationBuilder
